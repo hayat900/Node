@@ -1,0 +1,89 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+       #first,#second,#third,#fourth{
+          
+            margin-left:40%;
+            margin-top:-12.5%;
+        }
+       
+        .card{
+       width:45rem;
+        background-color:lightblue;
+       height:45rem;
+        
+        box-shadow:5px 5px 8px 8px;
+          }
+        
+    body{
+        background-color:lavender;
+         }
+    </style>
+  
+</head>
+<body>
+    
+      <div class="container">
+           <div class="row">
+                <div class="col sm-3"></div>
+                 <div class="offset-2 col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+                            <form action="/insert" method="post">
+                                <h1>Enter Details</h1><br><br>
+                                <label for="name">Enter name </label><br>
+                                <input type="text" name="name" id="talent_name" placeholder="Name"required><br><br>
+                                <div id="first">
+                                    <label for="age">Enter age </label><br>
+                                    <input type="number" name="age" id="age" placeholder="Age"required><br><br>
+                                </div>
+                                <p><label for="type">Enter player type</label></p>
+                                <select name="type" id="type" required>
+                                <option value="null">---Select---</option>
+                                <option value="Batsman">Batsman</option>
+                                <option value="Bowler">Bowler</option>
+                                <option value="Wicket keeper">Wicket keeper</option>
+          
+                                </select><br>
+        
+                                <div id="second">
+                                    <label for="runs">Enter Runs </label><br>
+                                    <input type="number" name="runs" placeholder="Runs"id="runs" required><br><br>
+                                </div>
+                                <label for="wickets">Enter Wickets </label><br>
+                                <input type="number" name="wickets" id="wickets" placeholder="Wickets" required><br><br>
+                                <div id="third">
+                                    <label for="strike_rate">Enter Strike rate </label><br>
+                                    <input type="number" name="strike_rate" id="strike_rate"placeholder="Strike Rate" required><br><br>
+                                </div>
+                                <label for="economy">Enter Economy </label><br>
+                                <input type="number" name="economy" placeholder="Economy" id="economy"><br><br>
+                                <div id="fourth">
+                                        <label for="captain">Whether a captain? </label><br>
+                                        <select name="captain" id="captain" required>
+                                        <option value="null">--Select--</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                        </select><br><br>
+                                </div>
+                                <input type="submit" value="Submit" class="btn btn-success  ">
+        
+                                <input type="button" value="Cancel"class="btn btn-dark" onclick="window.location.href='/'">
+                                </form>
+                    </div>
+               </div>
+            </div>
+            <div class="col-sm-3"></div>
+    </div>
+    </div>
+    </body>
+</html>
+
+
+
+

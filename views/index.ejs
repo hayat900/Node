@@ -1,0 +1,88 @@
+<! DOCTYPE html>
+<html>
+    <head>
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+      
+        table{
+            margin-top:5%;
+        }
+        h5{
+            margin-top:5%;
+        }
+        body{
+            background-color:bisque;
+        }
+        </style>
+      
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="add.ejs">ADD NEW CRICKETER<span class="sr-only">(current)</span></a>
+    </div>
+  </div>
+</nav>
+        <center><h1>Welcome to Cricketers Index</h1></center>
+        <center><table border="1">
+            
+   
+      <%if (reviews.length>0){%> 
+            
+        <tr><th>
+            NAME
+            </th><th>
+            AGE
+            </th><th>
+            TYPE
+            </th><th>
+            RUNS
+            </th><th>
+            WICKETS
+            </th><th>
+            STRIKE RATE
+            </th><th>
+            ECONOMY
+            </th><th>ACTION
+            </th>
+        </tr>
+            <% reviews.forEach(function(row){%>
+            <tr>
+            <%if (row.captain=='Yes'|| row.type=='Wicket keeper'){
+            %>
+        <td>
+            <b><%=row.name%></b>
+        </td><%}
+            else{%>
+        <td><%=row.name%></td>
+           <% }%>
+        <td>
+        <%=row.age%>
+        </td>
+        <td id="one">
+            <%=row.type%>
+        </td><td>
+                        
+        <%=row.runs%>
+        </td><td>
+                    
+        <%=row.wickets%>
+        </td><td>
+            <%=row.strike_rate%>
+        </td><td>
+            <%=row.economy%>
+        </td><td>
+            <a href="edit/<%=row._id%>?_method=put">Edit</a>/
+            <a href="delete/<%=row._id%>?_method=delete">delete</a>
+            </td></tr>
+       <% })}
+        else{%>
+        <h5>No record</h5><%}%>
+      
+    </table></center>
+</body>
+</html>
